@@ -4,7 +4,7 @@ const path = require('path');
 
 module.exports = merge(common, {
     mode: 'development',
-    entry: ['react-hot-loader/patch', './src/app.js'],
+    entry: ['react-hot-loader/patch', './src/index.js'],
 
     resolve: {
 	alias: {
