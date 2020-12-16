@@ -11,6 +11,14 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /(.*~$|^#.*#$)/,
+        exclude: /node_modules/,
+        include: sourcePath,
+        use: {
+          loader: "ignore-loader",
+        },
+      },
+      {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         include: sourcePath,
@@ -22,15 +30,13 @@ module.exports = {
         },
       },
       {
-        test: /(.*~$|^#.*#$)/,
+        test: /\.s?css$/,
         exclude: /node_modules/,
         include: sourcePath,
-        use: {
-          loader: "ignore-loader",
-        },
+        use: ["style-loader", "css-loader", "sass-loader"],
       },
       {
-        test: /.(png|svg|jpg|jpeg|gif)$/,
+        test: /\.(png|svg|jpg|jpeg|gif)$/,
         exclude: /node_modules/,
         include: sourcePath,
         type: "asset/resource",
