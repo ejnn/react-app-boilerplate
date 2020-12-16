@@ -13,4 +13,5 @@ popd
 rm -rf $OLDPWD
 npm install
 
+echo
 echo 'initialization complete! (you might want to edit your package.json)'
