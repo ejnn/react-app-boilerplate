@@ -14,9 +14,7 @@ module.exports = {
         test: /(.*~$|^#.*#$)/,
         exclude: /node_modules/,
         include: sourcePath,
-        use: {
-          loader: "ignore-loader",
-        },
+        use: ["ignore-loader"],
       },
       {
         test: /\.(js|jsx)$/,
@@ -25,7 +23,20 @@ module.exports = {
         use: {
           loader: "babel-loader",
           options: {
-            presets: ["@babel/env"],
+            presets: [
+              [
+                "@babel/preset-env",
+                {
+                  useBuiltIns: "usage",
+                  corejs: {
+                    version: "3",
+                    proposals: true,
+                  },
+                },
+              ],
+              ["@babel/preset-react"],
+            ],
+            plugins: ["react-hot-loader/babel"],
           },
         },
       },
