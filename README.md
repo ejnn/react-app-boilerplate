@@ -9,7 +9,7 @@ ended up with this repo (you'll probably want to use
 
 Just
 ```
-wget -q -O - https://raw.githubusercontent.com/ejnn/react-app-boilerplate/master/initialize.sh | bash
+wget -q -O - https://raw.github.com/ejnn/react-app-boilerplate/master/initialize.sh | bash
 ```
 while in your project's folder.
 
